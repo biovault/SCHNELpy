@@ -1,0 +1,3 @@
+recursive-include hdi *
+include requirements.txt
+recursive-include schnel/*

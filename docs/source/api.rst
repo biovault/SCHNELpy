@@ -1,0 +1,67 @@
+API
+====================
+
+In this section, the API of schnel package is provided.
+
+SCHNEL
+========
+
+algorithm.py
+--------------------
+
+.. automodule:: algorithm
+   :members:
+
+clustering
+==========
+
+HSNE_parser.py
+--------------------------
+
+.. automodule:: clustering.HSNE_parser
+   :members:
+
+HSNE.py
+--------------------
+
+.. autoclass:: clustering.HSNE.HSNE
+   :members:
+
+Data_Prep
+===========
+
+csv_to_numpy.py
+-------------------------
+
+.. automodule:: Data_Prep.csv_to_numpy
+   :members:
+
+dataprep.py
+-------------------------
+
+.. automodule:: Data_Prep.dataprep
+   :members:
+
+fcs_to_numpy.py
+-------------------------
+
+.. automodule:: Data_Prep.fcs_to_numpy
+   :members:
+
+h5ad_to_numpy.py
+--------------------------
+
+.. automodule:: Data_Prep.h5ad_to_numpy
+   :members:
+
+load_data.py
+-------------------------
+
+.. automodule:: Data_Prep.load_data
+   :members:
+
+pca.py
+-------------------------
+
+.. automodule:: Data_Prep.pca
+   :members:
