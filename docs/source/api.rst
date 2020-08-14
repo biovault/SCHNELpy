@@ -1,7 +1,7 @@
 API
 ====================
 
-In this section, the API of schnel package is provided.
+In this section, the API of the SCHNEL package is described.
 
 SCHNEL
 ========
@@ -65,3 +65,10 @@ pca.py
 
 .. automodule:: Data_Prep.pca
    :members:
+
+read_dir.py
+-------------------------
+
+.. automodule:: Data_Prep.read_dir
+   :members:
+

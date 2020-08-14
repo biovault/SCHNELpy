@@ -1,3 +1,3 @@
 # SCHNEL
-This repository is at its pre-release stage. 
-All documentation is in the docs directory.
+To use the package on Linux with interpreter python3.7 just download the binary file in dist/wheelhouse/ . 
+Next step is to run in the terminal pip install <path to the binary file + name of the file>.

@@ -15,7 +15,7 @@ import sys
 import guzzle_sphinx_theme
 # sys.path.insert(0, os.path.abspath('.'))
 
-for root, dirs, files in os.walk('../../schnel'): # path to my source code
+for root, dirs, files in os.walk('../../../pyschnel'): # path to my source code
    if '__pycache__' not in root: #__pycache__ folder excluded
        sys.path.insert(0, os.path.abspath(root))
 

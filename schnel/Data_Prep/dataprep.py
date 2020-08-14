@@ -8,16 +8,16 @@ import numpy as np
 import anndata as ad
 
 
-
-def parse_to_numpy(source, transformation=None, cofactor=5, features_after_pca=50):
+def parse_to_numpy(source, transformation=None, cofactor=5, features_after_pca=50, csv_header=False):
     """
-    Main method that accepts files of type: .csv, .fcs, .h5ad as wel as objects of type: np.ndarray and h5ad object. It
-    also transforms(log, arcsinh) data or performs pca analysis on it.
+    The main data parsing method that accepts files of type: .csv, .fcs, .h5ad as wel as objects of type: np.ndarray and h5ad object.
+    It can also transforms the input data with a log or arcsinh transformations, and can perform pca analysis on it.
 
+    :param csv_header: set to true if there are column names in the data
     :param source: file/object to become an ndarray
     :param transformation: one of two can be applied 'log' - logistic, 'arcsinh' - arcsine, Default is set to None
-    :param cofactor: only use when applying arcsinh transformation, Default is set to 5
-    :param features_after_pca: amount of features to stay after performing pca on given data, default is 50
+    :param cofactor: only use when applying the arcsinh transformation, Default is set to 5
+    :param features_after_pca: the amount of features to keep after performing pca on given data, default is 50
     :return: an np.ndarray ready to be clustered
     """
     #pylint: disable=unused-variable
@@ -32,7 +32,7 @@ def parse_to_numpy(source, transformation=None, cofactor=5, features_after_pca=5
         file_name, file_extension = os.path.splitext(source)
         np_arr = None
         if file_extension == ".csv":
-            np_arr = ctn(source)
+            np_arr = ctn(source, csv_header=csv_header)
         elif file_extension == ".fcs":
             np_arr = ftn(source)
         elif file_extension == ".h5ad":
@@ -40,8 +40,8 @@ def parse_to_numpy(source, transformation=None, cofactor=5, features_after_pca=5
         else:
             print("file type: " + file_extension + " not recognized by parser.\n "
                                                    "Acceptable types are: .csv, .fcs, .h5ad")
-
-    if np.size(np_arr) > features_after_pca:
+    print("ndim: ", np_arr.shape[1])
+    if np_arr.shape[1] > features_after_pca:
         np_arr = pca(np_arr, features_after_pca)
 
     transformed = np_arr

@@ -606,6 +606,7 @@ namespace hdi{
       }
 
       // utils::secureLogValue(_logger,"Min memory requirements (MB)",scale.mimMemoryOccupation());
+      return true;
     }
 
     template <typename scalar_type, typename sparse_scalar_matrix_type>
@@ -769,6 +770,7 @@ namespace hdi{
           _statistics._fmc_effective_sparsity = 1 - scalar_type(num_effective_elem_in_Ts) / (selected_landmarks*selected_landmarks);
         }
       }
+      return true;
     }
 
     template <typename scalar_type, typename sparse_scalar_matrix_type>
@@ -1055,6 +1057,7 @@ namespace hdi{
           }
         }
       }
+      return -1;
     }
 
     template <typename scalar_type, typename sparse_scalar_matrix_type>

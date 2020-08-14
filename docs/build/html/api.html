@@ -1,0 +1,487 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>API &#8212; schnelpy 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">schnelpy 0.0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">API</a></li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar">
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Contents</h2>
+    <div class="sidebar-localtoc">
+      <ul>
+<li><a class="reference internal" href="#">API</a></li>
+<li><a class="reference internal" href="#schnel">SCHNEL</a><ul>
+<li><a class="reference internal" href="#module-algorithm">algorithm.py</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#clustering">clustering</a><ul>
+<li><a class="reference internal" href="#module-clustering.HSNE_parser">HSNE_parser.py</a></li>
+<li><a class="reference internal" href="#hsne-py">HSNE.py</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#data-prep">Data_Prep</a><ul>
+<li><a class="reference internal" href="#module-Data_Prep.csv_to_numpy">csv_to_numpy.py</a></li>
+<li><a class="reference internal" href="#module-Data_Prep.dataprep">dataprep.py</a></li>
+<li><a class="reference internal" href="#module-Data_Prep.fcs_to_numpy">fcs_to_numpy.py</a></li>
+<li><a class="reference internal" href="#module-Data_Prep.h5ad_to_numpy">h5ad_to_numpy.py</a></li>
+<li><a class="reference internal" href="#module-Data_Prep.load_data">load_data.py</a></li>
+<li><a class="reference internal" href="#module-Data_Prep.pca">pca.py</a></li>
+<li><a class="reference internal" href="#module-Data_Prep.read_dir">read_dir.py</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/api.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="index.html">Docs</a></li>
+              
+              <li>API</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
+            
+  <div class="section" id="api">
+<h1>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<p>In this section, the API of schnel package is provided.</p>
+</div>
+<div class="section" id="schnel">
+<h1>SCHNEL<a class="headerlink" href="#schnel" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-algorithm">
+<span id="algorithm-py"></span><h2>algorithm.py<a class="headerlink" href="#module-algorithm" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="algorithm.cluster">
+<code class="sig-prename descclassname">algorithm.</code><code class="sig-name descname">cluster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source</span></em>, <em class="sig-param"><span class="n">feature_ids</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_of_scales</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">num_of_neighbours</span><span class="o">=</span><span class="default_value">30</span></em>, <em class="sig-param"><span class="n">transformation_method</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cofactor</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">p_comps</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cell_by_feature</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">csv_header</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#algorithm.cluster" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method is responsible for running the whole SCHNEL algorithm pipeline.
+Input data is parsed and transferred to numpy array. Afterwards, numpy array is processed with the help of C++ code
+wrapped with the help of pybind11. The output is a hsne binary file containing the generated HSNE hierarchy.
+HSNE hierarchy file is read by the HSNE parser which creates clustering with the help of Leiden algorithm.
+The output of this function is the list of matrices with columns as scales and rows as cluster classifications.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> – file path, ndarray, h5ad object or list of file paths</p></li>
+<li><p><strong>feature_ids</strong> – array of components on which the data should be clustered</p></li>
+<li><p><strong>num_of_scales</strong> – number of scales used for creating an HSNE hierarchy structure</p></li>
+<li><p><strong>num_of_neighbours</strong> – number of neighbours used in clustering</p></li>
+<li><p><strong>transformation_method</strong> – type of transformation used (log, arch or None)</p></li>
+<li><p><strong>cofactor</strong> – if arcsinh was specified you can pass the cofactor for thistransformation</p></li>
+<li><p><strong>p_comps</strong> – Number of principal componenets after PCA</p></li>
+<li><p><strong>cell_by_feature</strong> – true if input data is cell by feature, false if feature by cell</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of matrices equal to the size of the points/cells (rows)by the number of hierarchy scales (columns)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="clustering">
+<h1>clustering<a class="headerlink" href="#clustering" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-clustering.HSNE_parser">
+<span id="hsne-parser-py"></span><h2>HSNE_parser.py<a class="headerlink" href="#module-clustering.HSNE_parser" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="clustering.HSNE_parser.build_subscale">
+<code class="sig-prename descclassname">clustering.HSNE_parser.</code><code class="sig-name descname">build_subscale</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span></em>, <em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">numscales</span></em>, <em class="sig-param"><span class="n">logger</span></em><span class="sig-paren">)</span><a class="headerlink" href="#clustering.HSNE_parser.build_subscale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build subscale of the hierarchy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>handle</strong> – _io.BufferedReader (object result from calling native Python open() )</p></li>
+<li><p><strong>i</strong> – int, current scale</p></li>
+<li><p><strong>numscales</strong> – total number of scales</p></li>
+<li><p><strong>logger</strong> – Logger object</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Subscale</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="clustering.HSNE_parser.read_HSNE_binary">
+<code class="sig-prename descclassname">clustering.HSNE_parser.</code><code class="sig-name descname">read_HSNE_binary</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#clustering.HSNE_parser.read_HSNE_binary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read HSNE binary from file and construct HSNE object with top- and sub-scales.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> – str, file to read</p></li>
+<li><p><strong>verbose</strong> – bool, controls verbosity of parser</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>HSNE object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="clustering.HSNE_parser.read_scalar_vector">
+<code class="sig-prename descclassname">clustering.HSNE_parser.</code><code class="sig-name descname">read_scalar_vector</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span></em><span class="sig-paren">)</span><a class="headerlink" href="#clustering.HSNE_parser.read_scalar_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read float vector from HDI binary file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>handle</strong> – _io.BufferedReader (object result from calling native Python open() )</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="clustering.HSNE_parser.read_sparse_matrix">
+<code class="sig-prename descclassname">clustering.HSNE_parser.</code><code class="sig-name descname">read_sparse_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span></em><span class="sig-paren">)</span><a class="headerlink" href="#clustering.HSNE_parser.read_sparse_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read sparse matrix function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>handle</strong> – _io.BufferedReader (object result from calling native Python open() )</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>matrix</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="clustering.HSNE_parser.read_uint_vector">
+<code class="sig-prename descclassname">clustering.HSNE_parser.</code><code class="sig-name descname">read_uint_vector</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span></em><span class="sig-paren">)</span><a class="headerlink" href="#clustering.HSNE_parser.read_uint_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read unsigned int vector from HDI binary file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>handle</strong> – _io.BufferedReader (object result from calling native Python open() )</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="hsne-py">
+<h2>HSNE.py<a class="headerlink" href="#hsne-py" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="clustering.HSNE.HSNE">
+<em class="property">class </em><code class="sig-prename descclassname">clustering.HSNE.</code><code class="sig-name descname">HSNE</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num_scales</span></em><span class="sig-paren">)</span><a class="headerlink" href="#clustering.HSNE.HSNE" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="clustering.HSNE.HSNE.cluster_scale">
+<code class="sig-name descname">cluster_scale</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scalenumber</span></em>, <em class="sig-param"><span class="n">prop_method</span><span class="o">=</span><span class="default_value">'cluster'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#clustering.HSNE.HSNE.cluster_scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clusters data using Leiden algorithm on a given scale.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scalenumber</strong> – scale that clustering should be applied to</p></li>
+<li><p><strong>prop_method</strong> – label or cluster. Cluster returns cluster labels and label labels data scale mapping.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Clustering results. Either label or cluster.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="clustering.HSNE.HSNE.get_datascale_mappings">
+<code class="sig-name descname">get_datascale_mappings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scalenumber</span></em><span class="sig-paren">)</span><a class="headerlink" href="#clustering.HSNE.HSNE.get_datascale_mappings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates data scale mappings between most representative landmarks and data vectors at given scale.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>scalenumber</strong> – scale of desired mapping</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dictionary of mappings, keys are enumerated and values are respective representative landmarks</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="clustering.HSNE.HSNE.get_map_by_cluster">
+<code class="sig-name descname">get_map_by_cluster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scalenumber</span></em>, <em class="sig-param"><span class="n">clustering</span></em><span class="sig-paren">)</span><a class="headerlink" href="#clustering.HSNE.HSNE.get_map_by_cluster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maps given cluster at given scale.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scalenumber</strong> – scale to create map at</p></li>
+<li><p><strong>clustering</strong> – membership results of clustering</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>map between data and cluster assignment</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="clustering.HSNE.HSNE.get_topscale">
+<code class="sig-name descname">get_topscale</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#clustering.HSNE.HSNE.get_topscale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Getter for top scale of the hierarchy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>first scale</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="clustering.HSNE.HSNE.run_louvain">
+<code class="sig-name descname">run_louvain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scalenumber</span></em><span class="sig-paren">)</span><a class="headerlink" href="#clustering.HSNE.HSNE.run_louvain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs Leiden algorithm on a given scale.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>scalenumber</strong> – scale to cluster on</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>membership of data</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="data-prep">
+<h1>Data_Prep<a class="headerlink" href="#data-prep" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-Data_Prep.csv_to_numpy">
+<span id="csv-to-numpy-py"></span><h2>csv_to_numpy.py<a class="headerlink" href="#module-Data_Prep.csv_to_numpy" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="Data_Prep.csv_to_numpy.csv_to_numpy">
+<code class="sig-prename descclassname">Data_Prep.csv_to_numpy.</code><code class="sig-name descname">csv_to_numpy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_path</span></em>, <em class="sig-param"><span class="n">csv_header</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Data_Prep.csv_to_numpy.csv_to_numpy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translates csv files to numpy array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>csv_header</strong> – make true if there are column names in the data</p></li>
+<li><p><strong>file_path</strong> – path to file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>numpy array</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-Data_Prep.dataprep">
+<span id="dataprep-py"></span><h2>dataprep.py<a class="headerlink" href="#module-Data_Prep.dataprep" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="Data_Prep.dataprep.parse_to_numpy">
+<code class="sig-prename descclassname">Data_Prep.dataprep.</code><code class="sig-name descname">parse_to_numpy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source</span></em>, <em class="sig-param"><span class="n">transformation</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cofactor</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">features_after_pca</span><span class="o">=</span><span class="default_value">50</span></em>, <em class="sig-param"><span class="n">csv_header</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Data_Prep.dataprep.parse_to_numpy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main method that accepts files of type: .csv, .fcs, .h5ad as wel as objects of type: np.ndarray and h5ad object. It
+also transforms(log, arcsinh) data or performs pca analysis on it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>csv_header</strong> – make true if there are column names in the data</p></li>
+<li><p><strong>source</strong> – file/object to become an ndarray</p></li>
+<li><p><strong>transformation</strong> – one of two can be applied ‘log’ - logistic, ‘arcsinh’ - arcsine, Default is set to None</p></li>
+<li><p><strong>cofactor</strong> – only use when applying arcsinh transformation, Default is set to 5</p></li>
+<li><p><strong>features_after_pca</strong> – amount of features to stay after performing pca on given data, default is 50</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>an np.ndarray ready to be clustered</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-Data_Prep.fcs_to_numpy">
+<span id="fcs-to-numpy-py"></span><h2>fcs_to_numpy.py<a class="headerlink" href="#module-Data_Prep.fcs_to_numpy" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="Data_Prep.fcs_to_numpy.fcs_to_numpy">
+<code class="sig-prename descclassname">Data_Prep.fcs_to_numpy.</code><code class="sig-name descname">fcs_to_numpy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Data_Prep.fcs_to_numpy.fcs_to_numpy" title="Permalink to this definition">¶</a></dt>
+<dd><p>translate fcs extension file data into a numpy array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_path</strong> – path to the file</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-Data_Prep.h5ad_to_numpy">
+<span id="h5ad-to-numpy-py"></span><h2>h5ad_to_numpy.py<a class="headerlink" href="#module-Data_Prep.h5ad_to_numpy" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="Data_Prep.h5ad_to_numpy.h5ad_to_numpy">
+<code class="sig-prename descclassname">Data_Prep.h5ad_to_numpy.</code><code class="sig-name descname">h5ad_to_numpy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source</span></em>, <em class="sig-param"><span class="n">pca</span><span class="o">=</span><span class="default_value">50</span></em>, <em class="sig-param"><span class="n">previous_pca</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Data_Prep.h5ad_to_numpy.h5ad_to_numpy" title="Permalink to this definition">¶</a></dt>
+<dd><p>takes in h5ad source, performs pca if specified and returns numpy array of results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> – file path the h5ad file</p></li>
+<li><p><strong>pca</strong> – desired PC’s. Default 50.</p></li>
+<li><p><strong>previous_pca</strong> – True to use objects previously computed PCA. Default false.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-Data_Prep.load_data">
+<span id="load-data-py"></span><h2>load_data.py<a class="headerlink" href="#module-Data_Prep.load_data" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="Data_Prep.load_data.load_mnist">
+<code class="sig-prename descclassname">Data_Prep.load_data.</code><code class="sig-name descname">load_mnist</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Data_Prep.load_data.load_mnist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sample MNIST data used to show basic functionality of SCHNEL package.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>images of MNIST data set (10k), labels of MNIST data set (10k)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-Data_Prep.pca">
+<span id="pca-py"></span><h2>pca.py<a class="headerlink" href="#module-Data_Prep.pca" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="Data_Prep.pca.pca">
+<code class="sig-prename descclassname">Data_Prep.pca.</code><code class="sig-name descname">pca</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">comps</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Data_Prep.pca.pca" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns pca of data with desired components.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – numpy array to perform PCA on</p></li>
+<li><p><strong>comps</strong> – number of PC’s</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>array with PCA transformation</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-Data_Prep.read_dir">
+<span id="read-dir-py"></span><h2>read_dir.py<a class="headerlink" href="#module-Data_Prep.read_dir" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="Data_Prep.read_dir.read_directory">
+<code class="sig-prename descclassname">Data_Prep.read_dir.</code><code class="sig-name descname">read_directory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">directory_path</span></em>, <em class="sig-param"><span class="n">ext</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Data_Prep.read_dir.read_directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads files from a directory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>directory_path</strong> – directory from which files will be read.</p></li>
+<li><p><strong>ext</strong> – extension of files that should be read from this directory. (simple regex is also recognized).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List with files ready to pass to main cluster function.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+            
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">schnelpy 0.0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">API</a></li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2020, Bartlomiej Kotlicki. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>

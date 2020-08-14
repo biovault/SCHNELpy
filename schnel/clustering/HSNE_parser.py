@@ -31,7 +31,7 @@ def read_scalar_vector(handle):
 
 def read_HSNE_binary(filename, verbose=True):
     """
-    Read HSNE binary from file and construct HSNE object with top- and sub-scales.
+    Read a HSNE binary from a file and construct a HSNE object with top- and sub-scales.
 
     :param filename: str, file to read
     :param verbose: bool, controls verbosity of parser
@@ -65,7 +65,7 @@ def read_sparse_matrix(handle):
     cols = []
     rows = []
     weights = []
-    numrows = struct.unpack('i' , handle.read(4))[0]
+    numrows = struct.unpack('i', handle.read(4))[0]
     shape = numrows
     for rownum in range(numrows):
         rowlen = struct.unpack('i', handle.read(4))[0]
@@ -78,7 +78,7 @@ def read_sparse_matrix(handle):
 
 def build_subscale(handle, i, numscales, logger):
     """
-    Build subscale of the hierarchy.
+    Build a subscale of the hierarchy.
 
     :param handle: _io.BufferedReader (object result from calling native Python open() )
     :param i: int, current scale
