@@ -41,7 +41,7 @@ class HSNE:
 
     def get_topscale(self):
         """
-        Getter for top scale of the hierarchy.
+        Getter for the top scale of the hierarchy.
 
         :return: first scale
         """
@@ -49,7 +49,7 @@ class HSNE:
 
     def get_datascale_mappings(self, scalenumber):
         """
-        Generates data scale mappings between most representative landmarks and data vectors at given scale.
+        Generates data scale mappings between the most representative landmarks and data vectors at a given scale.
 
         :param scalenumber: scale of desired mapping
         :return: dictionary of mappings, keys are enumerated and values are respective representative landmarks
@@ -71,7 +71,7 @@ class HSNE:
 
     def get_map_by_cluster(self, scalenumber, clustering):
         """
-        Maps given cluster at given scale.
+        Maps a given cluster at a given scale.
 
         :param scalenumber: scale to create map at
         :param clustering: membership results of clustering
@@ -91,7 +91,7 @@ class HSNE:
 
     def cluster_scale(self, scalenumber, prop_method='cluster'):
         """
-        Clusters data using Leiden algorithm on a given scale.
+        Clusters data using the Leiden algorithm on a given scale.
 
         :param scalenumber: scale that clustering should be applied to
         :param prop_method: label or cluster. Cluster returns cluster labels and label labels data scale mapping.
@@ -116,7 +116,7 @@ class HSNE:
 
     def run_louvain(self, scalenumber):
         """
-        Runs Leiden algorithm on a given scale.
+        Runs the Leiden algorithm on a given scale.
 
         :param scalenumber: scale to cluster on
         :return: membership of data

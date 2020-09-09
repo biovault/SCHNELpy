@@ -1,6 +1,6 @@
 -i https://pypi.org/simple
 anndata==0.7.3
-flowcal==1.2.2
+fcsparser==0.2.1
 leidenalg==0.8.0
 mlxtend==0.17.2
 numpy==1.18.5

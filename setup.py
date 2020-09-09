@@ -8,6 +8,7 @@ import sys
 import platform
 import subprocess
 
+
 class CMakeExtension(Extension):
     def __init__(self, name, sourcedir=''):
         Extension.__init__(self, name, sources=[])
@@ -17,7 +18,7 @@ class CMakeExtension(Extension):
 class CMakeBuild(build_ext):
     def run(self):
         try:
-            out = subprocess.check_output(['cmake', '--version'])
+            out = subprocess.check_output(['cmake3', '--version'])
         except OSError:
             raise RuntimeError("CMake must be installed to build the following extensions: " +
                                ", ".join(e.name for e in self.extensions))
@@ -56,17 +57,18 @@ class CMakeBuild(build_ext):
                                                               self.distribution.get_version())
         if not os.path.exists(self.build_temp):
             os.makedirs(self.build_temp)
-        subprocess.check_call(['cmake', ext.sourcedir] + cmake_args, cwd=self.build_temp, env=env)
-        subprocess.check_call(['cmake', '--build', '.'] + build_args, cwd=self.build_temp)
+        subprocess.check_call(['cmake3', ext.sourcedir] + cmake_args, cwd=self.build_temp, env=env)
+        subprocess.check_call(['cmake3', '--build', '.'] + build_args, cwd=self.build_temp)
+
 
 setup(
-    name='pyschnel_test',
-    version='0.0.9',
+    name='pyschnel',
+    version='1.0.0',
     packages=find_packages(),
-    package_data={"schnel" : ["data/*"]},
+    package_data={"schnel": ["data/*"]},
     install_requires=[
         "anndata==0.7.3",
-        "flowcal==1.2.2",
+        "fcsparser==0.2.1",
         "leidenalg==0.8.0",
         "mlxtend==0.17.2",
         "numpy==1.18.5",
@@ -74,10 +76,10 @@ setup(
         "scipy==1.4.1",
         "python-igraph>=0.8.0"
     ],
-    author = "ThePH",
-    author_email="ThePH@lange.com",
-    description="This is a pre-release of pyschnel clustering package ",
-    keywords="schnel clustering algorithm",
+    author="__",
+    author_email="__",
+    description="__",
+    keywords="__ __ __",
     ext_modules=[CMakeExtension('py_hdi')],
     cmdclass=dict(build_ext=CMakeBuild),
 )

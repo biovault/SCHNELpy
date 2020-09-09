@@ -3,7 +3,7 @@ import sklearn.decomposition as sk
 
 def pca(data, comps):
     """
-    Returns pca of data with desired components.
+    Returns pca of data with a desired number of components.
 
     :param data: numpy array to perform PCA on
     :param comps: number of PC's

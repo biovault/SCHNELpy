@@ -4,7 +4,7 @@ import scanpy as sc
 
 def h5ad_to_numpy(source, pca=50, previous_pca=False):
     """
-    takes in h5ad source, performs pca if specified and returns numpy array of results.
+    Takes in a h5ad source, performs pca if specified and returns a numpy array of results.
 
     :param source: file path the h5ad file
     :param pca: desired PC's. Default 50.

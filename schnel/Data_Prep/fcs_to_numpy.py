@@ -1,12 +1,11 @@
-import FlowCal
-
+import fcsparser as fcs
 
 def fcs_to_numpy(file_path):
     """
-    translate fcs extension file data into a numpy array
+    Translate an .fcs extension file data into a numpy array
 
     :param file_path: path to the file
     :return: numpy.ndarray
     """
-    s = FlowCal.io.FCSFile(file_path)
-    return s.data
+    meta, data = fcs.parse(file_path, reformat_meta=True, meta_data_only=False)
+    return data
